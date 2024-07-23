@@ -114,12 +114,13 @@ int main() {
 	get_info(tickets, ticket_num);
 
 	int option;
-	do {
+	while (1) {
 		cout << endl << "Bus Ticket Application" << endl;
-		cout << "1. List Tickts " << endl;
-		cout << "2. Get Ticket " << endl;
-		cout << "3. Cancel Ticket " << endl << endl;
-		cout << "What do you want to do? Please write the number (1,2,3) of the transaction you want to perform: "; 
+		cout << "1: List Tickts\n";
+		cout << "2: Get Ticket\n";
+		cout << "3: Cancel Ticket\n";
+		cout << "4: Close program\n\n";
+		cout << "What do you want to do? Please write the number (1,2,3,4) of the transaction you want to perform: ";
 		cin >> option;
 
 		switch (option) {
@@ -135,12 +136,14 @@ int main() {
 				cout << "Enter the ticket number to be cancelled: ";
 				cancel_ticket(tickets, ticket_num, cancel_tickett);
 				break;
+			case 4:
+				cout << "Closing program.\n";
+				return 0;
 			default:
 				cout << "Invalid Selection" << endl;
 				break;
 		}
 	} 
-	while(option < 4 && option > 0);
 
 	return 0;
 }

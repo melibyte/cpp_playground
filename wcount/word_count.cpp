@@ -5,8 +5,15 @@
 
 using namespace std; 
 
-int main() {
-	ifstream file("words.txt");
+int main(int argc, char *argv[])
+{
+	if (argc < 2) {
+		cout << "usage : " << argv[0] << " [text file]" << "\n";
+		return 0;
+	}
+
+	cout << "Opening " << argv[1] << "\n";
+	ifstream file(argv[1]);
 
 	if (file.is_open()) {
 		string line;
@@ -22,6 +29,9 @@ int main() {
 		}
 		file.close();
 		cout << "Total Words: " << words << endl;
+	} else {
+		cout << "Could not open file.\n";
 	}
+
 	return 0;
 }
