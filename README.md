@@ -1,2 +1,3 @@
 # cpp_playground
-# cpp_playground
+
+- **Simple projects I wrote while learning C++**
